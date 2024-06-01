@@ -1,3 +1,4 @@
+import ProductCard from "@/components/ecommerce-components/productCard";
 import { useWixClient } from "@/hooks/useWixClient";
 import { wixClientServer } from "@/lib/winClientServer";
 import { products } from "@wix/stores";
@@ -12,17 +13,22 @@ const HomePage = async () => {
   console.log(res);
 
   return (
-    <div className="">
+    <div
+      className="grid grid-cols-1 md:grid-cols-2
+     lg:grid-cols-3 "
+    >
       {res.items.map((item: products.Product) => (
-        <div key={item._id}>
-          <h1>{item.name}</h1>
-          <Image
-            src={item.media?.mainMedia?.image?.url || "/product.png"}
-            alt="risova opicka"
-            width={200}
-            height={200}
-          ></Image>
-        </div>
+        <ProductCard
+          key={item._id}
+          title={item.name}
+          desc={item.description}
+          imgUrl={item.media?.mainMedia?.image?.url}
+          discountInPercent={item.discount?.value || 0}
+          price={item.price?.price}
+        />
+      ))}
+      {res.items.map((item) => (
+        <div key={item._id}>{item.description}</div>
       ))}
     </div>
   );

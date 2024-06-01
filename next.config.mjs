@@ -8,6 +8,10 @@ const nextConfig = {
         hostname: "static.wixstatic.com",
         protocol: "https",
       },
+      {
+        hostname: "images.unsplash.com",
+        protocol: "https",
+      },
     ],
   },
 };

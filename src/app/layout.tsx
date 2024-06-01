@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { WixClientContextProvider } from "@/context/wixContext";
+import { cn } from "@/lib/utils";
+import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = localFont({ src: "Chillax-Regular.woff2" });
 
 export const metadata: Metadata = {
   title: "Lama Dev E-Commerce Application",
@@ -19,8 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(font.className, "bg-background")}>
         <WixClientContextProvider>
+          <Toaster />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -28,6 +32,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
+
             {children}
           </ThemeProvider>
         </WixClientContextProvider>
