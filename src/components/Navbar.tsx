@@ -1,7 +1,8 @@
+"use client";
 import { url } from "inspector";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { ModeToggle } from "./mode-toggle";
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
@@ -15,17 +16,19 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { NAV_LINKS } from "@/constants";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const handleClick = () => {};
   return (
-    <nav className="flex justify-between items-center h-20 w-full pr-6  border-b-2 dark:border-b-zinc-600">
-      <div className="items-center flex justify-center">
+    <nav className="flex justify-between items-center h-20 w-full pr-6  ">
+      <div className="items-center flex justify-center pl-4">
         <Image
           className="dark:hidden block"
-          src={"/logo.svg"}
+          src={"/logo.png"}
           alt="logo"
-          width={150}
+          width={140}
           height={20}
         />
         <Image
@@ -37,16 +40,21 @@ const Navbar = () => {
         />
       </div>
       <ul className="flex gap-4  items-center max-md:hidden">
-        {NAV_LINKS.map((link) => (
-          <li
-            className="font-semibold text-md text-muted-foreground dark:text-slate-200"
-            key={link.label}
-          >
-            <Link href={link.url}>
-              <span>{link.label}</span>
-            </Link>
-          </li>
-        ))}
+        {NAV_LINKS.map((link) => {
+          return (
+            <li className="" key={link.label}>
+              <Link href={link.url}>
+                <span
+                  className={cn("font-semibold text-md  text-[#060E29]", {
+                    active: "underline",
+                  })}
+                >
+                  {link.label}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
         <li>
           <ModeToggle />
         </li>

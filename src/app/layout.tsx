@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Caladea } from "next/font/google";
+
+// If loading a variable font, you don't need to specify the font weight
 
 import localFont from "next/font/local";
 import "./globals.css";
@@ -7,8 +10,14 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { WixClientContextProvider } from "@/context/wixContext";
 import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
+import { Weight } from "lucide-react";
+import AnimatedCursor from "react-animated-cursor";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
-const font = localFont({ src: "Chillax-Regular.woff2" });
+const font = Caladea({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Lama Dev E-Commerce Application",
@@ -22,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(font.className, "bg-background")}>
+      <body className={cn(font.className, "bg-[#D9D9D9]")}>
         <WixClientContextProvider>
           <Toaster />
           <ThemeProvider
@@ -31,9 +40,23 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
+            <AnimatedCursor
+              innerSize={3}
+              outerSize={25}
+              innerStyle={{
+                border: "3px solid black",
+              }}
+              outerStyle={{
+                border: "1px solid black",
+                background: "transparent",
+              }}
+              outerAlpha={0.2}
+              innerScale={0.7}
+              outerScale={1.4}
+            />
 
-            {children}
+            <Navbar />
+            <MaxWidthWrapper>{children}</MaxWidthWrapper>
           </ThemeProvider>
         </WixClientContextProvider>
       </body>
