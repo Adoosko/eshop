@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(font.className, "bg-[#D9D9D9]")}>
+      <body className={cn(font.className, "bg-[#D9D9D9] dark:bg-gray-900")}>
         <WixClientContextProvider>
           <Toaster />
           <ThemeProvider
@@ -40,23 +40,43 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <AnimatedCursor
-              innerSize={3}
-              outerSize={25}
-              innerStyle={{
-                border: "3px solid black",
-              }}
-              outerStyle={{
-                border: "1px solid black",
-                background: "transparent",
-              }}
-              outerAlpha={0.2}
-              innerScale={0.7}
-              outerScale={1.4}
-            />
+            <div className="dark:hidden">
+              <AnimatedCursor
+                innerSize={3}
+                outerSize={25}
+                innerStyle={{
+                  border: "3px solid black",
+                }}
+                outerStyle={{
+                  border: "1px solid black",
+                  background: "transparent",
+                }}
+                outerAlpha={0.2}
+                innerScale={0.7}
+                outerScale={1.4}
+              />
+            </div>
+            <div className="hidden dark:block">
+              <AnimatedCursor
+                innerSize={3}
+                outerSize={25}
+                innerStyle={{
+                  border: "3px solid white",
+                }}
+                outerStyle={{
+                  border: "1px solid white",
+                  background: "transparent",
+                }}
+                outerAlpha={0.2}
+                innerScale={0.7}
+                outerScale={1.4}
+              />
+            </div>
 
-            <Navbar />
-            <MaxWidthWrapper>{children}</MaxWidthWrapper>
+            <MaxWidthWrapper>
+              <Navbar />
+              {children}
+            </MaxWidthWrapper>
           </ThemeProvider>
         </WixClientContextProvider>
       </body>

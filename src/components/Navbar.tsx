@@ -32,8 +32,8 @@ const Navbar = () => {
           height={20}
         />
         <Image
-          className="hidden dark:block"
-          src={"/logo-dark.svg"}
+          className="hidden dark:block "
+          src={"/logo.png"}
           alt="logo"
           width={150}
           height={20}
@@ -45,9 +45,12 @@ const Navbar = () => {
             <li className="" key={link.label}>
               <Link href={link.url}>
                 <span
-                  className={cn("font-semibold text-md  text-[#060E29]", {
-                    active: "underline",
-                  })}
+                  className={cn(
+                    "font-semibold text-md  text-[#060E29] dark:text-slate-200",
+                    {
+                      active: "underline",
+                    }
+                  )}
                 >
                   {link.label}
                 </span>

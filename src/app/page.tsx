@@ -16,9 +16,14 @@ const HomePage = async () => {
 
   return (
     <div className="relative flex flex-col items-center text-center px-5 overflow-hidden">
-      <div className={styles.polygon}></div>
+      <div className="dark:hidden w-screen">
+        <div className={styles.polygon}></div>
+      </div>
+      <div className="hidden dark:block w-screen">
+        <div className={styles.polygonDark}></div>
+      </div>
       <div className="flex flex-col gap-8 mt-10">
-        <h1 className="text-6xl text-[#D9D9D9]">
+        <h1 className="text-6xl text-[#D9D9D9] ">
           Podivejte sa na nase
           <span className="text-[#4E609F]"> Produkty</span>
         </h1>
@@ -44,6 +49,7 @@ const HomePage = async () => {
           />
         ))}
       </div>
+      <h2 className="text-3xl">PRODUKTY CO VIDIS SU PREBRATE Z WIXU</h2>
     </div>
   );
 };

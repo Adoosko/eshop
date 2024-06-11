@@ -82,8 +82,8 @@ const ProductCard = ({
       ></Image>
 
       <div className="flex flex-col gap-8 h-[158px] w-full ">
-        <p className="text-[28px] text-[#060E29]">{title}</p>
-        <p className="text-2xl font-thin">{price} KČ</p>
+        <p className="text-[28px] text-[#060E29] dark:text-white ">{title}</p>
+        <p className="text-2xl dark:text-white font-thin">{price} KČ</p>
       </div>
     </div>
   );
