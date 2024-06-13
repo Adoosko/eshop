@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 const Navbar = () => {
   const handleClick = () => {};
   return (
-    <nav className="flex justify-between items-center h-20 w-full pr-6  ">
+    <nav className="sticky bg-white top-0 left-0 z-50 flex justify-between items-center h-20 w-full pr-6  ">
       <div className="items-center flex justify-center pl-4">
         <Image
           className="dark:hidden block"

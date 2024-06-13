@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(font.className, "bg-[#D9D9D9] dark:bg-gray-900")}>
+      <body className={cn(font.className, "bg-white dark:bg-gray-900")}>
         <WixClientContextProvider>
           <Toaster />
           <ThemeProvider
@@ -73,10 +73,8 @@ export default function RootLayout({
               />
             </div>
 
-            <MaxWidthWrapper>
-              <Navbar />
-              {children}
-            </MaxWidthWrapper>
+            <Navbar />
+            {children}
           </ThemeProvider>
         </WixClientContextProvider>
       </body>

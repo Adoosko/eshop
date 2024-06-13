@@ -2,7 +2,7 @@
   position: absolute;
   top: -10;
   z-index: -10;
-  height: 600px;
+  height: 500px;
   width: 100vw;
   background: rgb(2, 19, 33);
   clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 45%);
@@ -14,7 +14,7 @@
   position: absolute;
   top: -10;
   z-index: -10;
-  height: 600px;
+  height: 500px;
   width: 100vw;
   background: rgb(1, 16, 50);
   clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 45%);
@@ -22,4 +22,31 @@
   margin-top: 0;
 
   overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+  .polygon {
+    position: absolute;
+    top: -10;
+    z-index: -10;
+    height: 700px;
+    width: 100vw;
+    background: rgb(2, 19, 33);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 45%);
+    display: flex;
+    margin-top: 0;
+    overflow: hidden;
+  }
+  .polygonDark {
+    position: absolute;
+    top: -10;
+    z-index: -10;
+    height: 700px;
+    width: 100vw;
+    background: rgb(1, 16, 50);
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 45%);
+    display: flex;
+    margin-top: 0;
+
+    overflow: hidden;
+  }
 }

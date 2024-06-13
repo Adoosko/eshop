@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { products } from "@wix/stores";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -72,19 +73,29 @@ const ProductCard = ({
     ));
   };
   return (
-    <div className="md:w-[365px] md:h-[591px] w-[290px] h-[469px] flex flex-col px-4 text-center overflow-hidden ">
+    <div className="group relative lg:w-[330px] lg:h-[491px] w-[290px] h-[390px] flex flex-col   gap-5 text-left  ">
       <Image
         src={imgUrl || ""}
         alt={title || ""}
-        width={365}
-        height={365}
-        className="w-[365px] h-[400px] rounded-t-xl object-cover overflow-hidden"
+        width={330}
+        height={330}
+        className="aspect-square w-[330px] h-[330px] rounded-t-xl object-cover overflow-hidden"
       ></Image>
 
-      <div className="flex flex-col gap-8 h-[158px] w-full ">
-        <p className="text-[28px] text-[#060E29] dark:text-white ">{title}</p>
-        <p className="text-2xl dark:text-white font-thin">{price} KČ</p>
+      <div className="flex flex-col gap-8 h-full] w-full mb-4 ">
+        <p className="text-[28px] text-[#060E29] dark:text-white line-clamp-1 ">
+          {title}
+        </p>
+        <div className="flex justify-between items-center">
+          <p className="text-2xl text-zinc-500 font-light dark:text-white ">
+            {price} KČ
+          </p>
+          <div className="peer h-12 w-12 border-[1px] border-zinc-800 rounded-full p-4 group-hover:bg-black duration-all duration-300  ">
+            <ShoppingCart className="text-black w-4 h-4 group-hover:text-white duration-all duration-300" />
+          </div>
+        </div>
       </div>
+      <div className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></div>
     </div>
   );
 };
