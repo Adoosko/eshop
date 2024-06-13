@@ -13,7 +13,7 @@ export const NAV_LINKS = [
   },
   {
     label: "Blog",
-    url: "/blog",
+    url: process.env.BLOG_URL,
   },
   {
     label: "Kontakt",
