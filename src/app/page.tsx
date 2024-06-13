@@ -39,7 +39,7 @@ const HomePage = async () => {
 
       <div
         className="mt-16 grid grid-cols-1 md:grid-cols-2 z-10
-     xl:grid-cols-3 gap-6 md:gap-7 xl:gap-10 "
+     xl:grid-cols-3 gap-6 md:gap-10 xl:gap-10 "
       >
         {res.items.map((item: products.Product) => (
           <ProductCard
