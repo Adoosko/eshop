@@ -43,7 +43,7 @@ const Navbar = () => {
         {NAV_LINKS.map((link) => {
           return (
             <li className="" key={link.label}>
-              <Link href={link.url}>
+              <Link href={link.url || ""}>
                 <span
                   className={cn(
                     "font-semibold text-md  text-[#060E29] dark:text-slate-200",

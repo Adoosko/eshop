@@ -40,7 +40,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="dark:hidden">
+            <div className="dark:hidden max-md:hidden">
               <AnimatedCursor
                 innerSize={3}
                 outerSize={25}
@@ -56,7 +56,7 @@ export default function RootLayout({
                 outerScale={1.4}
               />
             </div>
-            <div className="hidden dark:block">
+            <div className="hidden dark:block max-md:hidden">
               <AnimatedCursor
                 innerSize={3}
                 outerSize={25}
