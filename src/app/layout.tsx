@@ -13,6 +13,7 @@ import { Toaster } from "react-hot-toast";
 import { Weight } from "lucide-react";
 import AnimatedCursor from "react-animated-cursor";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import Footer from "@/components/Footer";
 
 const font = Caladea({
   weight: ["400", "700"],
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(font.className, "bg-white dark:bg-gray-900")}>
+      <body className={cn(font.className, "bg-white dark:bg-gray-900 ")}>
         <WixClientContextProvider>
           <Toaster />
           <ThemeProvider
@@ -72,9 +73,11 @@ export default function RootLayout({
                 outerScale={1.4}
               />
             </div>
-
-            <Navbar />
-            {children}
+            <div className="">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
           </ThemeProvider>
         </WixClientContextProvider>
       </body>

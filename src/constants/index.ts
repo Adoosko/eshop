@@ -24,3 +24,14 @@ export const NAV_LINKS = [
     url: "/login",
   },
 ];
+
+export const FOOTER_LINKS = [
+  {
+    label: "Ochrana osobních údajú",
+    url: "/osu",
+  },
+  {
+    label: "Obchodní podmínky",
+    url: "/ob",
+  },
+];

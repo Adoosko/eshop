@@ -3,7 +3,7 @@ import { useWixClient } from "@/hooks/useWixClient";
 import { wixClientServer } from "@/lib/winClientServer";
 import { products } from "@wix/stores";
 import Image from "next/image";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import styles from "./index.module.css";
 import { usePathname } from "next/navigation";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
@@ -12,8 +12,6 @@ const HomePage = async () => {
   const wixClient = await wixClientServer();
 
   const res = await wixClient.products.queryProducts().find();
-
-  console.log(res);
 
   return (
     <div className="relative flex flex-col items-center text-center px-5 overflow-hidden">

@@ -1,5 +1,4 @@
 "use client";
-
 import { useWixClient } from "@/hooks/useWixClient";
 import { LoginState } from "@wix/sdk";
 import { useRouter } from "next/navigation";
@@ -134,10 +133,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div
-      className=" mt-24 max-w-[400px] mx-auto flex flex-col items-center justify-center
-    border py-5 border-gray-300 rounded-xl shadow-lg bg-white dark:bg-gray-800 dark:border-gray-700"
-    >
+    <div className="mt-24 max-w-[400px] mx-auto flex flex-col items-center justify-center border py-5 border-gray-300 rounded-xl shadow-lg bg-white dark:bg-gray-800 dark:border-gray-700">
       <img src="/logo.png" alt="Company Logo" className="w-24 h-10 mb-6" />
       <form className="flex flex-col gap-6 w-full px-8" onSubmit={handleSubmit}>
         <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
@@ -149,7 +145,7 @@ const LoginPage = () => {
               Uživatelské jméno
             </label>
             <div className="relative">
-              <UserIcon className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300" />
+              <UserIcon className="absolute left-3 top-4 h-5 w-5 text-gray-400 dark:text-gray-300" />
               <input
                 type="text"
                 name="username"
@@ -166,7 +162,7 @@ const LoginPage = () => {
               Email
             </label>
             <div className="relative">
-              <MailIcon className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300" />
+              <MailIcon className="absolute left-3 top-[18px] h-5 w-5 text-gray-400 dark:text-gray-300" />
               <input
                 type="email"
                 name="email"
@@ -199,7 +195,7 @@ const LoginPage = () => {
               Heslo
             </label>
             <div className="relative">
-              <DoorClosed className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300" />
+              <DoorClosed className="absolute left-3 top-4 h-5 w-5 text-gray-400 dark:text-gray-300" />
               <input
                 type="password"
                 name="password"
@@ -212,14 +208,14 @@ const LoginPage = () => {
         )}
         {mode === MODE.LOGIN && (
           <div
-            className="text-sm text-blue-500 cursor-pointer dark:text-blue-400"
+            className="text-sm text-blue-700 cursor-pointer dark:text-blue-400"
             onClick={() => setMode(MODE.RESET_PASSWORD)}
           >
             Zapomněli jste heslo?
           </div>
         )}
         <button
-          className="bg-blue-500 text-white p-3 rounded-md w-full disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+          className="bg-blue-950 text-white p-3 rounded-md w-full  hover:bg-transparent hover:text-blue-950 hover:border hover:border-blue-950 transition-all duration-300 dark:bg-blue-600 dark:hover:bg-blue-700"
           disabled={isLoading}
         >
           {isLoading ? "Načítání..." : buttonTitle}
@@ -227,7 +223,7 @@ const LoginPage = () => {
         {error && <div className="text-red-500 dark:text-red-400">{error}</div>}
         {mode === MODE.LOGIN && (
           <div
-            className="text-sm text-blue-500 cursor-pointer dark:text-blue-400"
+            className="text-sm text-blue-700 cursor-pointer dark:text-blue-400"
             onClick={() => setMode(MODE.REGISTER)}
           >
             Nemáte účet?
